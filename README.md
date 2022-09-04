@@ -1,7 +1,7 @@
 # Ballerina-language-study
 Programs to study Ballerina language from basics to intermediate
 
-##Plan:
+# Plan:
 
 * Language basics
 * Working with databases
