@@ -1,7 +1,8 @@
 import ballerina/time;
 // import ballerinax/mysql.driver as _;
 import ballerinax/mysql;
-// import ballerina/sql;
+import ballerina/sql;
+import ballerina/io;
 
 public type Employee record {|
     int employee_id?;
@@ -21,3 +22,9 @@ configurable int PORT = ?;
 configurable string DATABASE = ?;
 
 final mysql:Client dbClient = check new(host=HOST, user=USER, password=PASSWORD, port=PORT, database=DATABASE);
+
+isolated function getTotalNumberEmployees() returns int|error {
+    sql:ExecutionResult result = check dbClient->execute(`SELECT COUNT(*) FROM Employees`);
+    io:println("result: ", result);
+    return 0;
+}
