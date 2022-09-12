@@ -1,5 +1,5 @@
-USER="sql6517136"
+USER="root"
 PASSWORD="XGHv2AuNsW"
-HOST="sql6.freemysqlhosting.net"
+HOST="localhost"
 PORT=3306
-DATABASE="sql6517136"
+DATABASE="company"
