@@ -39,3 +39,13 @@ isolated function addEmployee(Employee emp) returns int|error? {
 
     return error("Failed to add Employee");
 }
+
+isolated function getEmployee(int id) returns Employee|error? {
+    Employee employee = check dbClient->queryRow(`Select * from Employees where employee_id=${id}`);
+    return employee;
+}
+
+isolated function deleteEmployee(int id) returns int|error? {
+    sql:ExecutionResult result = check dbClient->execute(`DELETE from Employees where employee_id=${id}`);
+    return result.affectedRowCount;
+}
